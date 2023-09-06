@@ -39,10 +39,9 @@ describe('TODO LIST test scenarios', () => {
         cy.get('button[type="submit"]').click();
         cy.get('[class*="todoItem_icon"]').eq(0).click()
         cy.get(todoListPage.noToDo_text).should('be.visible').contains('No Todos')
-  
-      });
-    });
-  });
+      })
+    })
+  })
   
 
   it('I should be able to create a ToDo', () => {
@@ -56,7 +55,7 @@ describe('TODO LIST test scenarios', () => {
     cy.get('[class*="todoItem_todoText"]').should('contain', uniqueTitle)
   })
 
-  it('I should be able to see an Update ToDo dialog box', () => {
+  it('I should be able to Update a ToDo task', () => {
     const randomNumber = Math.floor(Math.random() * 1000) + 1
     const uniqueTitle = `My New ToDo ${randomNumber}`
     cy.get('[class="button_button__zbfSX button_button--primary__09xDJ"]').click();
@@ -70,7 +69,7 @@ describe('TODO LIST test scenarios', () => {
     cy.get('button.button_button__zbfSX.button_button--primary__09xDJ').should('be.visible').contains('Update Task')
   })
 
-  it('I should be able Update ToDo dialog box', () => {
+  it('I should be able to update a ToDo', () => {
     const randomNumber = Math.floor(Math.random() * 1000) + 1
     const uniqueTitle = `My New ToDo ${randomNumber}`
     cy.get('[class="button_button__zbfSX button_button--primary__09xDJ"]').click()
@@ -87,7 +86,7 @@ describe('TODO LIST test scenarios', () => {
       .contains('Updated ToDo Title')
   })
 
-  it('I should be able delete box', () => {
+  it('Delete a ToDo task', () => {
     const randomNumber = Math.floor(Math.random() * 1000) + 1
     const uniqueTitle = `My New ToDo ${randomNumber}`
     cy.get('[class="button_button__zbfSX button_button--primary__09xDJ"]').click()
